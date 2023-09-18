@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,400&display=swap');
+
+body{
+    margin:0;
+    padding:0;
+    background-image:url("./Assets/tom-barrett-hgGplX3PFBg-unsplash.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;   
+    font-family: "Poppins",sans-serif;    
+}
+ /* .parent-container{
+    
+    filter: blur(1px);
+    -webkit-filter: blur(0px);
+    height: 100%;
+    width:100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}  */
+
+ .input-div{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    /* width:50%; */
+    margin-top: 60px;
+} 
+.input-field{
+    width:300px;
+    height:50px;
+    border-radius:5px;   
+    font-size: 21px;
+    text-align: center;
+}
+.input-field::placeholder{
+   text-align: center;
+   font-size: 20px;
+}
+.fa-search{
+    font-size: 20px;
+    position: absolute;
+    right:630px;
+    color:grey;
+    z-index: 99999;
+    top:76px;
+}
