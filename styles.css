@@ -33,7 +33,7 @@ body{
     text-align: center;
 }
 .input-field::placeholder{
-   text-align: center;
+   text-align: center; 
    font-size: 20px;
 }
 .fa-search{
@@ -43,4 +43,39 @@ body{
     color:grey;
     z-index: 99999;
     top:76px;
+}
+.weather-display-div{
+font-size: 25px;
+}
+
+/* the weather info styles */
+.searched-city-weather{
+    margin-top: 40px;
+    text-align: center;
+    font-size: 25px;
+    color:#ffff;
+}
+
+.city-name{
+    text-align: center;
+    font-size: 30px;
+    color:#ffff;
+}
+
+.degree-div{
+    text-align: center;
+    font-size: 60px;
+    color:#ffff;
+}
+/* .wcondition{
+    font-size: 15px;
+    text-align: center;
+    color:#ffff;
+    margin-top:20px;
+} */
+.info{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
 }
