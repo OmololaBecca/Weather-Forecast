@@ -2,7 +2,7 @@ const api ='f8f1bd81386b538512bbd69470d8ffa9';
 const searchIcon =document.getElementById('search-icon')
 const city= document.getElementById('location')
 const weatherDisplay=document.querySelector('.weather-display-div')
-const sunrise=document.querySelector('.sunrise')
+const gifDiv=document.querySelector('.giphy-div')
 const weatherCondition=document.querySelector('.weather-condition')
 
 
@@ -22,6 +22,9 @@ searchIcon.addEventListener('click' ,() =>{
     //    let searchCountry = fetchedData.sys.country;
     
     //    console.log(`${searchLocation}, ${searchCountry}`) 
+
+    // Appending of elements
+
     let displayCard =document.createElement("div")
     displayCard.className ="displayed-card" 
 
@@ -56,7 +59,7 @@ searchIcon.addEventListener('click' ,() =>{
 
 
 
-    
+    // storing of the datas in a variable
      let receivedDescp = fetchedData.weather[0].main
      let receivedData = Math.floor(fetchedData.main.temp)
      let cityDataName =fetchedData.name
@@ -79,6 +82,7 @@ searchIcon.addEventListener('click' ,() =>{
         searchedCityWeather.style.color="black"
         cityName.style.color="black"
          degreeAndP.style.color="black"
+          gifDiv.style.display="block"
      }else if(randomImages=="wind"){
        document.body.style.backgroundImage="url"('./Assets/khamkeo-vilaysing-WtwSsqwYlA0-unsplash.jpg')
      }else if(randomImages=="Sunny"){

@@ -8,15 +8,6 @@ body{
     background-repeat: no-repeat;   
     font-family: "Poppins",sans-serif;    
 }
- /* .parent-container{
-    
-    filter: blur(1px);
-    -webkit-filter: blur(0px);
-    height: 100%;
-    width:100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-}  */
 
  .input-div{
     display:flex;
@@ -67,15 +58,17 @@ font-size: 25px;
     font-size: 60px;
     color:#ffff;
 }
-/* .wcondition{
-    font-size: 15px;
-    text-align: center;
-    color:#ffff;
-    margin-top:20px;
-} */
-.info{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    gap:20px;
+.giphy-div{
+   margin: auto;
+   margin-top: 40px;
+   display:none;
+}
+
+
+@media(max-width:600px){
+    .fa-search{
+        font-size: 20px;
+        right:430px;
+        top:76px;
+    }
 }
