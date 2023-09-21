@@ -2,7 +2,11 @@ const api ='f8f1bd81386b538512bbd69470d8ffa9';
 const searchIcon =document.getElementById('search-icon')
 const city= document.getElementById('location')
 const weatherDisplay=document.querySelector('.weather-display-div')
-const gifDiv=document.querySelector('.giphy-div')
+const gifRain=document.querySelector('.rain')
+const gifCloud=document.querySelector('.cloud')
+const gifSunny=document.querySelector('.sunny')
+const gifWind=document.querySelector('.windy')
+const gifClearSky=document.querySelector('.clear-sky')
 const weatherCondition=document.querySelector('.weather-condition')
 
 
@@ -77,18 +81,23 @@ searchIcon.addEventListener('click' ,() =>{
        document.body.style.backgroundSize = "cover"
        document.body.style.backgroundRepeat = "no repeat"
        document.body.style.backgroundPosition = "center"
+       gifCloud.style.display="block"
      }else if(randomImages=="Rain"){
         document.body.style.backgroundImage = "url('/Assets/raimond-klavins-rxm_S9XmK-Y-unsplash.jpg')"
         searchedCityWeather.style.color="black"
         cityName.style.color="black"
          degreeAndP.style.color="black"
-          gifDiv.style.display="block"
+          gifRain.style.display="block"
      }else if(randomImages=="wind"){
        document.body.style.backgroundImage="url"('./Assets/khamkeo-vilaysing-WtwSsqwYlA0-unsplash.jpg')
+       gifWind.style.display="block"
+       
      }else if(randomImages=="Sunny"){
       document.body.style.backgroundImage ="url('./Assets/aaron-burden-BTubi6qaY6Q-unsplash.jpg')"
+      gifSunny.style.display="block"
      }else{
          document.body.style.backgroundImage ="url('./Assets/tom-barrett-hgGplX3PFBg-unsplash.jpg')"
+         gifClearSky.style.display="block"
      }
      
     }
