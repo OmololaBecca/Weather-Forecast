@@ -15,8 +15,9 @@
  <input placeholder="Enter a city name" type="text" class="input-field" id="location"> 
  <div class="search-icon" ><i class="fa fa-search" id="search-icon"></i></div>
 </div>
+<p class="error-tag"></p>
 
-<div class="weather-display-div">
+<div class="image-display-div">
 
     <div style="width:50%;height:0;padding-bottom:10%;position:relative;" class="giphy-div rain"><iframe src="https://giphy.com/embed/vnNHyroyEwb4s" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
     
@@ -27,7 +28,22 @@
 
     <div style="width:45%;height:0;padding-bottom:11%;position:relative;"  class="giphy-div windy"><iframe src="https://giphy.com/embed/0IGRygDt5cMP2Q0Jmu" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 
-    <div style="width:100%;height:0;padding-bottom:10%;position:relative;" class="giphy-div clear-sky"><iframe src="https://giphy.com/embed/yLrLQPkyz7dLYshVhO" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+    <div style="width:100%;height:0;padding-bottom:10%;position:relative;" class="giphy-div clear-sky"><iframe src="https://giphy.com/embed/yLrLQPkyz7dLYshVhO" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> </div>
+</div>
+
+    <div class=display-weather-div>
+                  
+        <p class="weather-p">Weather condition: <span class="searched-city-weather"></span></p>
+
+        <div class="degree-main-div">
+            <p class="degree-div"></p>
+        <span class="degree-icon">o</span>
+            <span class="span-degree">C</span>
+        </div>
+        
+        <p class="city-name"></p>
+        
+        </div>
     <!-- <div class="info">
         <h4>Sunrise: <span class="sunrise">i</span></h4>
         <h4>Sunset: <span class="sunset">No Information Available</span></h4>

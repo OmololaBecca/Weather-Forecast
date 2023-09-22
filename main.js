@@ -2,18 +2,23 @@ const api ='f8f1bd81386b538512bbd69470d8ffa9';
 const searchIcon =document.getElementById('search-icon')
 const city= document.getElementById('location')
 const weatherDisplay=document.querySelector('.weather-display-div')
+const searchedCityWeather=document.querySelector('.searched-city-weather')
+const degreeAndP=document.querySelector('.degree-div')
+const cityName=document.querySelector('.city-name')
 const gifRain=document.querySelector('.rain')
 const gifCloud=document.querySelector('.cloud')
 const gifSunny=document.querySelector('.sunny')
 const gifWind=document.querySelector('.windy')
 const gifClearSky=document.querySelector('.clear-sky')
 const weatherCondition=document.querySelector('.weather-condition')
+const errorTag=document.querySelector('.error-tag')
 
 
 
 
 
 searchIcon.addEventListener('click' ,() =>{
+  
     const fetchApi = async () =>{
         let data = await fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city.value}&appid=${api}`);
        let fetchedData = await data.json()
@@ -27,39 +32,45 @@ searchIcon.addEventListener('click' ,() =>{
     
     //    console.log(`${searchLocation}, ${searchCountry}`) 
 
+// error handling message
+    if (fetchedData.message =="city not found"){
+      errorTag.innerHTML ="city not found"
+      console.log("not found")
+    }
+
     // Appending of elements
 
-    let displayCard =document.createElement("div")
-    displayCard.className ="displayed-card" 
+    // let displayCard =document.createElement("div")
+    // displayCard.className ="displayed-card" 
 
-    let searchedCityWeather=document.createElement("p")
-    searchedCityWeather.className="searched-city-weather"
+    // let searchedCityWeather=document.createElement("p")
+    // searchedCityWeather.className="searched-city-weather"
 
-    let degreeAndP =document.createElement("div")
-    degreeAndP.className ="degree-div"
-    degreeAndP.appendChild(document.createTextNode("18"))
+    // let degreeAndP =document.createElement("div")
+    // degreeAndP.className ="degree-div"
+    // degreeAndP.appendChild(document.createTextNode("18"))
 
     // let searchedDescp =document.createElement("p")
     // searchedDescp.className ="searched-descp"
 
-    let degree = document.createElement("sup")
-    degree.className="degree"
-    degree.appendChild(document.createTextNode("0"))
-    console.log(degree)
+    // let degree = document.createElement("sup")
+    // degree.className="degree"
+    // degree.appendChild(document.createTextNode("0"))
+    // console.log(degree)
 
-    degreeAndP.appendChild(document.createTextNode("C"))
+    // degreeAndP.appendChild(document.createTextNode("C"))
 
-    let cityName = document.createElement("p")
-    cityName.className="city-name"
+    // let cityName = document.createElement("p")
+    // cityName.className="city-name"
 
 
 
     //  degreeAndP.appendChild(searchedDescp)
-     degreeAndP.appendChild(degree)
-     displayCard.appendChild(searchedCityWeather)
-     displayCard.appendChild(degreeAndP)
-     displayCard.appendChild(cityName)
-     weatherDisplay.appendChild(displayCard)
+    //  degreeAndP.appendChild(degree)
+    //  displayCard.appendChild(searchedCityWeather)
+    //  displayCard.appendChild(degreeAndP)
+    //  displayCard.appendChild(cityName)
+    //  weatherDisplay.appendChild(displayCard)
 
 
 
@@ -69,9 +80,9 @@ searchIcon.addEventListener('click' ,() =>{
      let cityDataName =fetchedData.name
 
      
-     searchedCityWeather.innerText= receivedDescp;
-      degreeAndP.innerText= receivedData;
-     cityName.innerText = cityDataName;
+     searchedCityWeather.innerHTML= receivedDescp;
+      degreeAndP.innerHTML= receivedData;
+     cityName.innerHTML = cityDataName;
 
 
      //the changing of the images
@@ -82,22 +93,42 @@ searchIcon.addEventListener('click' ,() =>{
        document.body.style.backgroundRepeat = "no repeat"
        document.body.style.backgroundPosition = "center"
        gifCloud.style.display="block"
+       gifRain.style.display="none"
+       gifWind.style.display="none"
+       gifSunny.style.display="none"
+       gifClearSky.style.display="none"
      }else if(randomImages=="Rain"){
         document.body.style.backgroundImage = "url('/Assets/raimond-klavins-rxm_S9XmK-Y-unsplash.jpg')"
         searchedCityWeather.style.color="black"
         cityName.style.color="black"
          degreeAndP.style.color="black"
           gifRain.style.display="block"
+          gifCloud.style.display="none"
+          gifWind.style.display="none"
+       gifSunny.style.display="none"
+       gifClearSky.style.display="none"
      }else if(randomImages=="wind"){
        document.body.style.backgroundImage="url"('./Assets/khamkeo-vilaysing-WtwSsqwYlA0-unsplash.jpg')
        gifWind.style.display="block"
+       gifRain.style.display="none"
+       gifCloud.style.display="none"
+       gifSunny.style.display="none"
+       gifClearSky.style.display="none"
        
      }else if(randomImages=="Sunny"){
       document.body.style.backgroundImage ="url('./Assets/aaron-burden-BTubi6qaY6Q-unsplash.jpg')"
       gifSunny.style.display="block"
+      gifWind.style.display="none"
+      gifRain.style.display="none"
+      gifCloud.style.display="none"
+       gifClearSky.style.display="none"
      }else{
          document.body.style.backgroundImage ="url('./Assets/tom-barrett-hgGplX3PFBg-unsplash.jpg')"
          gifClearSky.style.display="block"
+         gifSunny.style.display="none"
+      gifWind.style.display="none"
+      gifRain.style.display="none"
+      gifCloud.style.display="none"
      }
      
     }

@@ -52,12 +52,40 @@ font-size: 25px;
     font-size: 30px;
     color:#ffff;
 }
-
-.degree-div{
+.error-tag{
     text-align: center;
-    font-size: 60px;
+    font-size: 23px;
     color:#ffff;
 }
+.weather-p{
+    font-size:13px;
+    text-align: center;
+    color:#ffff;
+}
+.degree-main-div{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.degree-div{
+    text-align: center;
+    font-size: 40px;
+    color:#ffff;
+}
+.span-degree{
+    font-size: 40px;
+    color:#ffff;
+}
+.degree-icon{
+font-size:25px !important;
+color:#ffff;
+margin-top:-2px;
+position: absolute;
+left:760px;
+top:480px;
+}
+
+                
 .giphy-div{
    margin: auto;
    margin-top: 40px;
