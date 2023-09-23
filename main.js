@@ -12,6 +12,8 @@ const gifWind=document.querySelector('.windy')
 const gifClearSky=document.querySelector('.clear-sky')
 const weatherCondition=document.querySelector('.weather-condition')
 const errorTag=document.querySelector('.error-tag')
+const degreeTag=document.querySelector('.pee-degree')
+const weatherTag=document.querySelector('.weather-p')
 
 
 
@@ -36,43 +38,9 @@ searchIcon.addEventListener('click' ,() =>{
     if (fetchedData.message =="city not found"){
       errorTag.innerHTML ="city not found"
       console.log("not found")
+    }else{
+      errorTag.innerHTML =""
     }
-
-    // Appending of elements
-
-    // let displayCard =document.createElement("div")
-    // displayCard.className ="displayed-card" 
-
-    // let searchedCityWeather=document.createElement("p")
-    // searchedCityWeather.className="searched-city-weather"
-
-    // let degreeAndP =document.createElement("div")
-    // degreeAndP.className ="degree-div"
-    // degreeAndP.appendChild(document.createTextNode("18"))
-
-    // let searchedDescp =document.createElement("p")
-    // searchedDescp.className ="searched-descp"
-
-    // let degree = document.createElement("sup")
-    // degree.className="degree"
-    // degree.appendChild(document.createTextNode("0"))
-    // console.log(degree)
-
-    // degreeAndP.appendChild(document.createTextNode("C"))
-
-    // let cityName = document.createElement("p")
-    // cityName.className="city-name"
-
-
-
-    //  degreeAndP.appendChild(searchedDescp)
-    //  degreeAndP.appendChild(degree)
-    //  displayCard.appendChild(searchedCityWeather)
-    //  displayCard.appendChild(degreeAndP)
-    //  displayCard.appendChild(cityName)
-    //  weatherDisplay.appendChild(displayCard)
-
-
 
     // storing of the datas in a variable
      let receivedDescp = fetchedData.weather[0].main
@@ -97,6 +65,8 @@ searchIcon.addEventListener('click' ,() =>{
        gifWind.style.display="none"
        gifSunny.style.display="none"
        gifClearSky.style.display="none"
+       degreeTag.style.display ="block"
+       weatherTag.style.display="block"
      }else if(randomImages=="Rain"){
         document.body.style.backgroundImage = "url('/Assets/raimond-klavins-rxm_S9XmK-Y-unsplash.jpg')"
         searchedCityWeather.style.color="black"
@@ -107,6 +77,9 @@ searchIcon.addEventListener('click' ,() =>{
           gifWind.style.display="none"
        gifSunny.style.display="none"
        gifClearSky.style.display="none"
+       degreeTag.style.display ="block"
+       weatherTag.style.display="block"
+
      }else if(randomImages=="wind"){
        document.body.style.backgroundImage="url"('./Assets/khamkeo-vilaysing-WtwSsqwYlA0-unsplash.jpg')
        gifWind.style.display="block"
@@ -114,6 +87,8 @@ searchIcon.addEventListener('click' ,() =>{
        gifCloud.style.display="none"
        gifSunny.style.display="none"
        gifClearSky.style.display="none"
+       degreeTag.style.display ="block"
+       weatherTag.style.display="block"
        
      }else if(randomImages=="Sunny"){
       document.body.style.backgroundImage ="url('./Assets/aaron-burden-BTubi6qaY6Q-unsplash.jpg')"
@@ -122,6 +97,8 @@ searchIcon.addEventListener('click' ,() =>{
       gifRain.style.display="none"
       gifCloud.style.display="none"
        gifClearSky.style.display="none"
+       degreeTag.style.display ="block"
+       weatherTag.style.display="block"
      }else{
          document.body.style.backgroundImage ="url('./Assets/tom-barrett-hgGplX3PFBg-unsplash.jpg')"
          gifClearSky.style.display="block"
@@ -129,6 +106,8 @@ searchIcon.addEventListener('click' ,() =>{
       gifWind.style.display="none"
       gifRain.style.display="none"
       gifCloud.style.display="none"
+      degreeTag.style.display ="block"
+      weatherTag.style.display="block"
      }
      
     }
